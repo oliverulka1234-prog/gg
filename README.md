@@ -8,7 +8,7 @@ This repository implements an end-to-end **AI football betting machine** inspire
 
 ## What was implemented
 
-The project combines the strongest practical elements from those references:
+The project combines practical elements from those references:
 
 1. **SportsBet-style workflow**
    - Simple command-line pipeline.
@@ -50,6 +50,47 @@ football-bet --country-code E0 --season 2324 --estimator rf
 ```bash
 football-bet --csv /path/to/matches.csv --estimator xgb --lookback 8 --min-edge 0.03
 ```
+
+## How to use this on a phone
+
+You have 3 realistic options:
+
+### Option A (Recommended): Replit / GitHub Codespaces in mobile browser
+
+1. Fork this repo on GitHub.
+2. Open the repo in **Codespaces** (or import to Replit).
+3. In terminal, run:
+
+```bash
+pip install -e .
+football-bet --country-code E0 --season 2324
+```
+
+4. Copy the JSON output from terminal.
+
+Why this is easiest: no local setup, works on iPhone/Android browser.
+
+### Option B: Android with Termux
+
+1. Install **Termux** from F-Droid.
+2. In Termux:
+
+```bash
+pkg update && pkg upgrade -y
+pkg install git python -y
+git clone https://github.com/<your-username>/<your-fork>.git
+cd <your-fork>
+pip install -e .
+football-bet --country-code E0 --season 2324
+```
+
+### Option C: iPhone/iPad with a remote Linux box
+
+1. Use an SSH app (Blink/Shelly/Termius).
+2. SSH into a VPS or home Linux machine.
+3. Run the same install + command steps there.
+
+> iOS does not provide a full native local Python shell like Termux, so remote execution is usually the practical path.
 
 ## Output
 
