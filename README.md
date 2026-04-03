@@ -105,3 +105,25 @@ The CLI prints JSON with:
 
 - This is for **research/education**, not financial advice.
 - Betting is risky; historical backtests do not guarantee future returns.
+
+## Deploy to Netlify
+
+A mobile-friendly UI is included in `web/` so you can upload CSV files and run a browser backtest.
+
+1. Push this repo to your GitHub account.
+2. Go to Netlify and click **Add new site → Import an existing project**.
+3. Pick your repo.
+4. Build settings:
+   - Build command: *(leave empty)*
+   - Publish directory: `web`
+5. Deploy.
+
+This repo includes `netlify.toml`, so Netlify should auto-detect publish settings.
+
+### Local preview
+
+```bash
+python -m http.server 8080 -d web
+```
+
+Then open `http://localhost:8080`.
