@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Football Betting Machine</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>AI Football Betting Machine</h1>
+      <p>
+        Upload a football-data style CSV (columns like <code>HomeTeam</code>, <code>AwayTeam</code>, <code>FTR</code>,
+        <code>B365H</code>, <code>B365D</code>, <code>B365A</code>) and run a browser backtest.
+      </p>
+
+      <section class="card">
+        <label for="csvFile">CSV file</label>
+        <input id="csvFile" type="file" accept=".csv,text/csv" />
+
+        <div class="row">
+          <label>Lookback <input id="lookback" type="number" min="1" max="20" value="5" /></label>
+          <label>Train fraction <input id="trainFraction" type="number" min="0.5" max="0.95" step="0.05" value="0.8" /></label>
+        </div>
+
+        <div class="row">
+          <label>Min edge <input id="minEdge" type="number" min="0" max="1" step="0.01" value="0.02" /></label>
+          <label>Max Kelly <input id="maxKelly" type="number" min="0.01" max="0.5" step="0.01" value="0.1" /></label>
+        </div>
+
+        <label>Initial bankroll <input id="bankroll" type="number" min="1" value="1000" /></label>
+
+        <button id="runBtn">Run Backtest</button>
+      </section>
+
+      <section class="card">
+        <h2>Results</h2>
+        <pre id="output">Upload a CSV to begin.</pre>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
